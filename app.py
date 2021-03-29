@@ -18,9 +18,9 @@ root.geometry("1500x900")
 root.configure(bg="white",)
 root.minsize(width=1500, height=900)
 root.maxsize(width=1500, height=900)
-root.iconbitmap(default='deflast.ico')
+root.iconbitmap(default='icon.ico')
 
-img7 = Image.open("2.png")  # PIL solution
+img7 = Image.open("bg.png")  # PIL solution
 img7 = img7.resize((1500, 900), Image.ANTIALIAS) #The (250, 250) is (height, width)
 img7 = ImageTk.PhotoImage(img7) # convert to PhotoImage
 #image = C.create_image(1500,0, anchor = NE, image = img)
@@ -219,7 +219,7 @@ def resize_image(event):
     label.image = photo #avoid garbage collection
 
 
-image = Image.open('2.png')
+image = Image.open('bg.png')
 copy_of_image = image.copy()
 photo = ImageTk.PhotoImage(image)
 
@@ -238,7 +238,7 @@ entry = Entry(label, font=font2,  borderwidth=0, fg='gray15')
 entry.place(relwidth=0.3, relheight=0.035, relx=0.03475, rely=0.15575,) 
 entry.bind('<Return>', (lambda event: get_pop(entry.get()))) 
 
-img = Image.open("g2.png")
+img = Image.open("search.png")
 img = img.resize((36, 33), Image.ANTIALIAS)
 photo = ImageTk.PhotoImage(img)
 
