@@ -1,6 +1,3 @@
-
-
-
 import tkinter as tk
 from tkinter import *
 import requests
@@ -20,7 +17,7 @@ root.minsize(width=1500, height=900)
 root.maxsize(width=1500, height=900)
 root.iconbitmap(default='icon.ico')
 
-img7 = Image.open("bg.png")  # PIL solution
+img7 = Image.open("2.png")  # PIL solution
 img7 = img7.resize((1500, 900), Image.ANTIALIAS) #The (250, 250) is (height, width)
 img7 = ImageTk.PhotoImage(img7) # convert to PhotoImage
 #image = C.create_image(1500,0, anchor = NE, image = img)
@@ -194,8 +191,8 @@ def format_response6(city_json):
 
 
 def get_pop(city):
-    city_key = '4eef031b14489ddb6612553f7e7e6d2d415581b3'
-    url = 'https://public.opendatasoft.com/api/records/1.0/search/?dataset=geonames-all-cities-with-a-population-1000&q=&sort=population&facet=timezone&facet=country'
+    city_key = '78bf7008e0aa218e8dd9f5bbc92e7435caae422fed8b3c772d9e4b6e'
+    url = 'https://data.opendatasoft.com/api/records/1.0/search/?dataset=geonames-all-cities-with-a-population-500%40public&q=&sort=population&facet=timezone&facet=country'
     params = {'APPID': city_key, 'q': city}
     response = requests.get(url, params=params)
     city = response.json()  
@@ -219,7 +216,7 @@ def resize_image(event):
     label.image = photo #avoid garbage collection
 
 
-image = Image.open('bg.png')
+image = Image.open('2.png')
 copy_of_image = image.copy()
 photo = ImageTk.PhotoImage(image)
 
@@ -238,7 +235,7 @@ entry = Entry(label, font=font2,  borderwidth=0, fg='gray15')
 entry.place(relwidth=0.3, relheight=0.035, relx=0.03475, rely=0.15575,) 
 entry.bind('<Return>', (lambda event: get_pop(entry.get()))) 
 
-img = Image.open("search.png")
+img = Image.open("g2.png")
 img = img.resize((36, 33), Image.ANTIALIAS)
 photo = ImageTk.PhotoImage(img)
 
@@ -271,3 +268,4 @@ l6.place(relx=0.2625, rely=0.587575, relwidth=0.475, relheight=0.5075/12,)
 
 
 root.mainloop() 
+
